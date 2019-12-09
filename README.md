@@ -17,10 +17,16 @@ Our team focuses on anomaly detection that is a technique used to identify rare 
 ## Files
 
 1.fraud-detection-using-machine-learning.template
+
 Set up the configuration in CloudFormation
 
-2.
+2.sagemaker_fraud_detection.ipynb
 
+Train the model in Sagemaker
+
+3.fraud_testing_resample.ipynb
+
+Prepare the steaming data to predict
 
 ## Inference
 
