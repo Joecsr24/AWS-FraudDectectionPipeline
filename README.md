@@ -28,6 +28,10 @@ Train the model in Sagemaker
 
 Prepare the steaming data to predict
 
+**4.creditcard_sample.csv**
+
+Sample data
+
 ## Inference
 
 https://s3.amazonaws.com/solutions-reference/fraud-detection-using-machine-learning/latest/fraud-detection-using-machine-learning.pdf
