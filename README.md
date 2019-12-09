@@ -37,6 +37,6 @@ Sample data
 
 **2.
 
-## reference
+## Reference
 
 https://s3.amazonaws.com/solutions-reference/fraud-detection-using-machine-learning/latest/fraud-detection-using-machine-learning.pdf
