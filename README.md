@@ -16,4 +16,12 @@ Our team focuses on anomaly detection that is a technique used to identify rare 
 
 ## Files
 
-### 
+1.fraud-detection-using-machine-learning.template
+Set up the configuration in CloudFormation
+
+2.
+
+
+## Inference
+
+https://s3.amazonaws.com/solutions-reference/fraud-detection-using-machine-learning/latest/fraud-detection-using-machine-learning.pdf
