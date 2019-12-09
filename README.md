@@ -1,6 +1,6 @@
 # Real-time Fraud Dectection
 
-## Real-time Anomaly Detection Using Amazon Sagemaker, Lambda, and Quicksight
+**Real-time Anomaly Detection Using Amazon Sagemaker, Lambda, and Quicksight**
 
 2019 MSBA 6330 / MSBA 6320 Trends Marketplace
 
