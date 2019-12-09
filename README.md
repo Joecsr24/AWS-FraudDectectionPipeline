@@ -32,6 +32,12 @@ Prepare the steaming data to predict
 
 Sample data
 
-## Inference
+## Step
+
+**1.Create AWS account and set up boto3.
+
+**2.
+
+## reference
 
 https://s3.amazonaws.com/solutions-reference/fraud-detection-using-machine-learning/latest/fraud-detection-using-machine-learning.pdf
