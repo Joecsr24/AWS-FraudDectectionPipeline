@@ -39,10 +39,6 @@ Sample data
 
 ## Step
 
-**1.Create AWS account and set up boto3.
 
-**2.
-
-## Reference
 
 
