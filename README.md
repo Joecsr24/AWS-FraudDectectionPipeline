@@ -1,4 +1,4 @@
-**Supervised Anomaly Detection & Real Time Notification Using Amazon Sagemaker, kinesis, and Quicksight**
+# Supervised Anomaly Detection & Real Time Notification Using Amazon Sagemaker, kinesis, and Quicksight
 
 2019 MSBA 6330 / MSBA 6320 Trends Marketplace
 
