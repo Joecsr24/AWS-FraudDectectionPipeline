@@ -64,11 +64,3 @@ Subset data that has assigned a fraud label by our model
 **step9_manifest.json**
 
 config Quicksight dashboard.
-
-**fraud_testing_resample.ipynb**
-
-
-
-
-
-
