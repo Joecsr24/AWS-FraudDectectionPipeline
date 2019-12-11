@@ -43,7 +43,7 @@ Instruction:
 
 * Go to execution role section, view the existing role that assigned by the template, view this role on the IAM console, attach the administratorAccess policy to it. 
 
-* Repeat the same steps above for **fraud_send_alert.py**, used ‘fraud-send-alert’ as the name of certain lambda function. (don’t forget to attach` administratorAccess policy to the corresponding IAM role)
+Repeat the same steps above for **fraud_send_alert.py**, used ‘fraud-send-alert’ as the name of certain lambda function. (don’t forget to attach` administratorAccess policy to the corresponding IAM role)
 
 ![](img/create_lambda.png)
 
