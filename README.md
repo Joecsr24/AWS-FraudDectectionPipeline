@@ -41,9 +41,13 @@ a sample of dataset that was used in this project.
 
 Set up the configuration in CloudFormation
 
-**handout.pdf**
+**Handout.pdf**
 
 The flyer we used in the presentation section.
+
+**Voicethread.mov**
+
+The slides and presentation
 
 **step2_training_sagemaker_logistic.ipynb**
 
