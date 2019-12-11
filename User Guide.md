@@ -10,7 +10,7 @@
 * *If your aws account is subscribing the [free tier](https://aws.amazon.com/free/free-tier-faqs/) price plan, then you may need to request an increase in quota for a more powerful instance (ml.c4.xlarge in this case)*.
 	* please follow this [guideline](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html) to request a quota increase. 
 ## Step 1: Launch the Stack
-Use this [AWS CloudFormation template](https://s3.amazonaws.com/solutions-reference/fraud-detection-using-machine-learning/latest/fraud-detection-using-machine-learning.template) to deploy a sample solution provided by the aws. For the detail, please refer to the step1 of this [tutorial](https://s3.amazonaws.com/solutions-reference/fraud-detection-using-machine-learning/latest/fraud-detection-using-machine-learning.pdf).
+Use this [AWS CloudFormation template](https://s3.amazonaws.com/solutions-reference/fraud-detection-using-machine-learning/latest/fraud-detection-using-machine-learning.template) to deploy a sample solution provided by the aws. For the detail, please refer to the step 1 of this [tutorial](https://s3.amazonaws.com/solutions-reference/fraud-detection-using-machine-learning/latest/fraud-detection-using-machine-learning.pdf).
 ## Step 2: Run the sagemaker notebook. 
 For the scope of this project,  we made a tradeoff between model performance and low latency: Although xgboost algorithm provides better performance, its high latency is unacceptable for the end user who are limited by budget and couldn’t deploy a powerful instance. In this case, logistic regression is a reasonable alternative.
 
