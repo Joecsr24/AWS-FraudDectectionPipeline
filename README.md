@@ -15,7 +15,7 @@ On a high level, We fit a classification model with historical fraud data and de
 ![](img/workflow.png)
 
 ## Dataset used for this demo
-In this project, we used a credit card fraud dataset from [Kaggle](https://www.kaggle.com/mlg-ulb/creditcardfraud) as a demo to demonstrate our solution. 
+In this project, we used a credit card fraud dataset from [Kaggle](https://www.kaggle.com/mlg-ulb/creditcardfraud) as a demo to demonstrate our solution. The dataset contains 30 variables, among which 28 are principle components obtained with PCA, the only variables which have not been transformed with PCA are 'Time','Amount' and 'Class'. The dataset is highly unbalanced, the positive class (frauds) account for 0.172% of all transactions. Therefore, we resampled the dataset to make the ratio of fraud to non-fraud became 1:100.
 
 ## Handout
 See handout file
