@@ -20,7 +20,8 @@ If you need a solution that avoids a high latency while keeping reasonable perfo
 
 Instruction for Step 2:
 
-* Sign in your aws account and go to the **Amazon Sagemaker console**. 
+* Navigate to **Amazon S3** console and create following buckets: **fraud-model-data** and **fraud-result**.
+* Navigate to the **Amazon Sagemaker console**. 
 * On the left side of console, click on **notebook instance**, then click on **FraudDetectionNotebookInstance**, then click on **Open Jupyter**, this will open a new tab for jupiter notebook
 ![](img/openjupyter.png)
 * Upload the **sagemaker_logistic.ipynb** to this notebook.
@@ -37,7 +38,7 @@ Instruction:
 * Choose Author from scratch, denote **fraud-func** as the **function name**, choose **Python 3.6** as the **Runtime**, then click **create the function**
 ![](img/create_function_lambda.png)
 
-* go back to the **function** tab, click on **fraud-func**, and then go to the **configuration** tab. put the code of **fraud_func.py** in this repository into the console under the **Function code** section. This python script is built upon the original lambda function provided by aws.
+* Navigate to the **function** tab, click on **fraud-func**, and then go to the **configuration** tab. put the code of **fraud_func.py** in this repository into the console under the **Function code** section. This python script is built upon the original lambda function provided by aws.
 ![](img/fraud_func_code.png)
 
 * Go to execution role section, view the existing role that assigned by the template, view this role on the IAM console, attach the administratorAccess policy to it. 
@@ -53,10 +54,10 @@ This Kinesis Firehose Stream will receive the incoming data and trigger certain 
 Instruction:
 
 * Create a Kinesis Firehose Stream from the Kinesis console, on step 1,  denote the name as **data-for-fraud-detection**, choose **Direct PUT or other sources** as data source.
-* On step 2, enable data transformation, and select **fraud-func** as your lambda function.
-* On step 3, select Amazon S3 as destination, and select **fraud-result** as S3 bucket. (You need create certain S3 bucket in advance).
-* On step 4, set Buffer size under **S3 buffer conditions** section as 1MB, and set buffer interval as 60 seconds.
-* remain default setting for all other sections.
+* Navigate to step 2, enable data transformation, and select **fraud-func** as your lambda function.
+* Navigate to step 3, select Amazon S3 as destination, and specify **fraud-result** as S3 bucket.
+* Navigate step 4, set Buffer size under **S3 buffer conditions** section as 1MB, and set buffer interval as 60 seconds.
+* Use default setting for all other config.
 * Review the setting on step 5 and create the stream. 
 
 ## Step 5: prepare live data
@@ -74,7 +75,7 @@ Please make sure that you have already set up boto3 (see step 0) before running 
 
 ## Step 6.1 modify lambda function
 * Navigate to **SNS** console, select **fraud-alert** topic. 
-* copy the **ARN** of this topic.
+* Copy the **ARN** of this topic.
 
 ![](img/arn_name.png)
 
