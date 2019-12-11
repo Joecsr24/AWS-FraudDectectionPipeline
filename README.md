@@ -28,11 +28,11 @@ Set up the configuration in CloudFormation
 
 **2.sagemaker_fraud_detection.ipynb**
 
-Train the model in Sagemaker
+Train the model offline in Sagemaker
 
 **3.fraud_testing_resample.ipynb**
 
-Prepare the steaming data to predict
+Prepare the steaming data for online predictiction
 
 **4.creditcard_sample.csv**
 
