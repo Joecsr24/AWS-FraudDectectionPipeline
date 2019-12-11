@@ -11,8 +11,9 @@ Anomaly detection is a technique used to identify rare items, events, or observa
 
 ## Guideline
 
-To take a quick look at our project, please check out **handout.pdf**
 To take a deep look at how we built up this workflow, please check out **User Guide.md**
+
+To take a quick look at our project, please check out **handout.pdf**
 
 ## Details in our workflow 
 On a high level, We fit a classification model with historical fraud data and deployed it to a service endpoint. When the streaming data comes in, such endpoint will be invoked and make real time prediction. A notification would be sent out if an anomaly is detected by the algorithm. At the end of each day, a summary dashboard would be automatically updated to reflect the recent pattern of anomal activities, providing insights to stackholder. 
