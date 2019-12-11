@@ -18,6 +18,7 @@ On a high level, We fit a classification model with historical fraud data and de
 In this project, we used a credit card fraud dataset from [Kaggle](https://www.kaggle.com/mlg-ulb/creditcardfraud) as a demo to demonstrate our solution. 
 
 ## Handout
+See handout file
 
 ## Files
 
