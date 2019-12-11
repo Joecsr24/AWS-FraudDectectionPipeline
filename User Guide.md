@@ -1,7 +1,7 @@
 # User Guide
 ## General reminder:
 * Please note that you are responsible for the cost of the AWS services used while running this solution. See the Cost section for more details. For full details, see the pricing webpage for each AWS service you will be using in this solution. 
-* To simplify, we attached the AdministratorAccess Policy to an IAM role when it is necessary. In most real world scenarios this is not an appropriate practice. In this case please set up the corresponding IAM role at your discretion. For further reference, please visit this [guideline](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
+* We attached the AdministratorAccess Policy to an IAM role when it is necessary. In most real world scenarios this is not an appropriate practice. If you have certain concern, please set up the corresponding IAM role at your discretion. For further reference, please visit this [guideline](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
 
 ## Step 0: set up AWS account, boto3, authentication credentials. 
 * **If you doesn’t have an AWS account yet**: please go to [this website]([Amazon Web Services (AWS) -  Cloud Computing Services](https://aws.amazon.com/?nc1=h_ls)), click the button on the upright corner to create a new AWS account. 
