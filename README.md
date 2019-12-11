@@ -1,4 +1,4 @@
-# Supervised Anomaly Detection & Real Time Notification Using Amazon Sagemaker, kinesis, SNS and Quicksight
+# Supervised Anomaly Detection & Real Time Notification Using Amazon Sagemaker, AWS Kinesis, AWS SNS and AWS Quicksight
 
 2019 MSBA 6330 / MSBA 6320 Trends Marketplace
 
@@ -18,27 +18,56 @@ On a high level, We fit a classification model with historical fraud data and de
 In this project, we used a credit card fraud dataset from [Kaggle](https://www.kaggle.com/mlg-ulb/creditcardfraud) as a demo to demonstrate our solution. The dataset contains 30 variables, among which 28 are principle components obtained with PCA, the only variables which have not been transformed with PCA are 'Time','Amount' and 'Class'. The dataset is highly unbalanced, the positive class (frauds) account for 0.172% of all transactions. Therefore, we resampled the dataset to make the ratio of fraud to non-fraud became 1:100.
 
 ## Handout
-See handout file
+
+To take a quick look at our project, please check **handout.pdf**
 
 ## Files
 
-**1.fraud-detection-using-machine-learning.template**
+Most files are added a prefix that corresponds to the step it involved of our **user guide**.
+
+**User Guide.md**
+
+a detailed walk through of our project
+
+**creditcard_sample.csv**
+
+a sample of dataset that was used in this project.
+
+**fraud-detection-using-machine-learning.template**
 
 Set up the configuration in CloudFormation
 
-**2.sagemaker_fraud_detection.ipynb**
+**handout.pdf**
 
-Train the model offline in Sagemaker
+The flyer we used in the presentation section.
 
-**3.fraud_testing_resample.ipynb**
+**step2_training_sagemaker_logistic.ipynb**
 
-Prepare the steaming data for online predictiction
+Train a logistic model and deploy it to an sagemaker endpoint.
 
-**4.creditcard_sample.csv**
+**step3_fraud_func.py**
 
-Sample data
+Perform data preprocessing, prediciton, and post processing task. 
 
-## Step
+**step3_fraud_send_alert.py**
+
+Invoke a SNS client and sent a message to the designated endpoint.
+
+**step5_streaming_resample.ipynb**
+
+Prepare the steaming data for real time predictiction
+
+**step7_filter_fraud_output.sql**
+
+Subset data that has assigned a fraud label by our model
+
+**step9_manifest.json**
+
+config Quicksight dashboard.
+
+**fraud_testing_resample.ipynb**
+
+
 
 
 
