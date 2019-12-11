@@ -24,7 +24,7 @@ Instruction for Step 2:
 * Navigate to the **Amazon Sagemaker console**. 
 * On the left side of console, click on **notebook instance**, then click on **FraudDetectionNotebookInstance**, then click on **Open Jupyter**, this will open a new tab for jupiter notebook
 ![](img/openjupyter.png)
-* Upload the **sagemaker_logistic.ipynb** to this notebook.
+* Upload the **step2_sagemaker_logistic.ipynb** to this notebook.
 ![](img/uploadjupyter.png)
 * Run every code cell until **Incremental training** section.
 
@@ -38,12 +38,12 @@ Instruction:
 * Choose Author from scratch, denote **fraud-func** as the **function name**, choose **Python 3.6** as the **Runtime**, then click **create the function**
 ![](img/create_function_lambda.png)
 
-* Navigate to the **function** tab, click on **fraud-func**, and then go to the **configuration** tab. put the code of **fraud_func.py** in this repository into the console under the **Function code** section. This python script is built upon the original lambda function provided by aws.
+* Navigate to the **function** tab, click on **fraud-func**, and then go to the **configuration** tab. put the code of **step3_fraud_func.py** in this repository into the console under the **Function code** section. This python script is built upon the original lambda function provided by aws.
 ![](img/fraud_func_code.png)
 
 * Go to execution role section, view the existing role that assigned by the template, view this role on the IAM console, attach the administratorAccess policy to it. 
 
-Repeat the same steps above for **fraud_send_alert.py**, used ‘fraud-send-alert’ as the name of certain lambda function. (don’t forget to attach` administratorAccess policy to the corresponding IAM role)
+Repeat the steps above for **step3_fraud_send_alert.py**, used **fraud-send-alert** as the name of certain lambda function. (don’t forget to attach administratorAccess policy to the corresponding IAM role)
 
 ![](img/create_lambda.png)
 
@@ -63,7 +63,7 @@ Instruction:
 ## Step 5: prepare live data
 Please make sure that you have already set up boto3 (see step 0) before running the following notebook. 
 
-* Upload the **streaming_resample.ipynb** to the jupyter notebook on your local, open this notebook and run the code until **start streaming** section (last section).
+* Upload the **step5_streaming_resample.ipynb** to the jupyter notebook on your local, open this notebook and run the code until **start streaming** section (last section).
 * Read the documentation of function **init()** of class **KinesisLoader**, try to understand the parameters.
 ![](img/initdoc.png)
 
@@ -90,9 +90,10 @@ Instruction:
 * Create a Kinesis Analytics application with name **fraud-filter-alert**, use SQL as **runtime**.
 * Once the application is created, click **connect streaming data** under source section. choose Kinesis firehose delivery stream as Source, and select **fraud-detection-firehose-stream** as the data source.
 ![](img/analytic_source.png)
-* Go to the **streaming_resample.ipynb** that was set up in step 5. In the section **start the stream**, Set up a stream with small sample of data (~200 rows) at a relatively slow rate (~2 record/sec). 
+* Go to the **step5_streaming_resample.ipynb**. Under the **start the stream** section , set up a stream with small sample of data (~200 rows) at a relatively slow rate (~2 record/sec). 
+
 ```
-#example code
+#an example
 
 upload_client = KinesisLoader(client,test_card_final.iloc[:200,:],'data-for-fraud-detection',batch_size=1,sleep_time=0.5)
 
@@ -102,7 +103,7 @@ upload_client.submit_batch()
 * Click on **edit schema**, and replace both dummy column name (COL0, COL1, etc) and inferred data types with the following:
 ![](img/schema_column.png)
 
-* Click **Save and Continue**, and go to real time analytic section, put codes in **filter_fraud_output.sql** to the console, click **save and run SQL**
+* Click **Save and Continue**, and go to real time analytic section, put codes in **step7_filter_fraud_output.sql** to the console, click **save and run SQL**
 * Go to the Destination section of the main page of **fraud-filter-alert** application, click **connect new destination**, select **AWS lambda function** as your destination and specify  **fraud-send-alert** as your lambda function. 
 * Under **In-application stream** section, specify **DESTINATION_SQL_STREAM** as your in-application stream, remain others as default setting, and then click **save and continue**.
 
@@ -119,7 +120,7 @@ At this point, most component of the workflow is set up.
 ## Step 9: initiate the summary dashboard hosted by Quicksight
 a dashboard is supposed to be built after a reasonable number (> 1000)  of data come in. So wait for a while before you start this step. 
 
-* Download **manifest.json** from this repository and modify the URIPrefixes URL.
+* Download **step9_manifest.json** from this repository and modify the URIPrefixes URL.
 	* Modify the region name to match the region where you deployed the solution, if necessary.
 	* Modify the Amazon S3 bucket name to match the name you specified for **Results Bucket Name** AWS CloudFormation template parameter during deployment.
 * Navigate to the Amazon QuickSight console.
